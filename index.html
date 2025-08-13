@@ -4,8 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DACH-VorlagenWerk – Digitale Vorlagen für DE, AT & CH</title>
-  <meta name="description" content="Professionelle, sofort einsetzbare Vorlagen (DOCX, PDF, XLSX) für kleine Unternehmen in Deutschland, Österreich und der Schweiz. Zeitsparend, präzise, anonym – keine Rechtsberatung." />
+  <meta name="description" content="Professionelle, sofort einsatzbereite Vorlagen (DOCX, PDF, XLSX) für kleine Unternehmen in Deutschland, Österreich und der Schweiz. Zeitsparend, präzise, anonym – keine Rechtsberatung." />
   <meta name="robots" content="index,follow" />
+
+  <!-- Favicon/Logo -->
   <link rel="icon" type="image/png" href="site icon.png" />
   <meta property="og:title" content="DACH-VorlagenWerk" />
   <meta property="og:description" content="Digitale Vorlagen für DE, AT & CH" />
@@ -15,13 +17,13 @@
 
   <style>
     :root{
-      --bg:#0e2238;
+      --bg:#0e2238; /* Navy */
       --bg-soft:#122a44;
-      --brand:#f5c400;
-      --text:#f8fbff;
+      --brand:#f5c400; /* Gold */
+      --text:#f8fbff; /* near-white */
       --muted:#6b7280;
       --card:#ffffff;
-      --ink:#111827;
+      --ink:#111827; /* dark text */
       --ok:#16a34a; --warn:#d97706; --err:#dc2626;
       --radius:16px;
       --shadow:0 10px 25px rgba(2,12,29,.25);
@@ -33,24 +35,43 @@
       color:var(--ink);background:#f3f6fb;
     }
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
     header{position:sticky;top:0;z-index:50;background:rgba(243,246,251,.8);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #e5edf7}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--bg)}
     .brand img{width:40px;height:40px;border-radius:9px}
     .brand b{font-size:18px}
     .nav a{color:#37557a;text-decoration:none;margin-left:18px;font-weight:600}
+
     .btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:12px 18px;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
     .btn-primary{background:var(--brand);color:#231a00}
     .btn-ghost{background:#fff;color:#0e2238;border:1px solid #cfe0f4;box-shadow:none}
+
     .hero{background:linear-gradient(180deg,#0e2238 0%,#17385d 100%);color:var(--text)}
     .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center;padding:56px 0}
     .hero h1{font-size:42px;line-height:1.1;margin:0 0 14px}
     .hero p{font-size:18px;color:#e0e9f6}
     .pill{display:inline-block;background:rgba(245,196,0,.15);color:#ffe58a;border:1px solid rgba(245,196,0,.35);padding:6px 12px;border-radius:999px;font-weight:700;font-size:13px;margin-bottom:12px}
+
     .card{background:var(--card);border:1px solid #e5edf7;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:-40px 20px 30px 20px;}
-    .feature{display:flex;flex-direction:column;justify-content:center;text-align:center;padding:18px;min-height:140px}
+
+    /* FEATURES – korrekte Ausrichtung mit grid */
+    .features{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin:-40px 20px 30px 20px;
+    }
+    .feature{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      text-align:center;
+      padding:18px;
+      min-height:140px;
+    }
     .feature h3{margin:6px 0 8px;font-size:18px}
+
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .item{padding:18px}
     .item h4{margin:8px 0 10px}
@@ -59,10 +80,14 @@
     .notice{font-size:13px;color:#5a6778}
     .search{display:flex;gap:10px;margin:24px 0}
     input[type="search"],select{flex:1;border:1px solid #cfe0f4;border-radius:12px;padding:12px 14px;font-size:15px}
+
     .faq details{background:#fff;border:1px solid #e5edf7;border-radius:12px;padding:14px 16px}
     .faq summary{cursor:pointer;font-weight:700}
+
     footer{margin:50px 0 40px;font-size:14px;color:#5a6778}
+    .kicker{display:flex;gap:12px;align-items:center;color:#e0e9f6}
     .badge{font-size:12px;background:#0c1a2a;color:#cfe0f4;border:1px solid #254468;border-radius:9px;padding:6px 10px}
+
     @media (max-width:980px){
       .hero .wrap{grid-template-columns:1fr}
       .grid{grid-template-columns:1fr 1fr}
@@ -74,6 +99,17 @@
       .hero h1{font-size:34px}
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"DACH-VorlagenWerk",
+    "url":"https://example.com",
+    "logo":"site icon.png",
+    "sameAs":[]
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -101,7 +137,7 @@
           <a class="btn btn-primary" href="#produkte">Kostenlose Muster laden</a>
           <a class="btn btn-ghost" href="#newsletter">Updates erhalten</a>
         </div>
-        <div style="margin-top:16px;flex-wrap:wrap">
+        <div class="kicker" style="margin-top:16px;flex-wrap:wrap">
           <span class="badge">DOCX / PDF / XLSX</span>
           <span class="badge">Kein Abo nötig</span>
           <span class="badge">KI-optimiert</span>
@@ -124,27 +160,83 @@
     </div>
   </section>
 
+  <!-- FEATURES -->
+  <section class="container">
+    <div class="features">
+      <div class="card feature">
+        <h3>Zeitsparend</h3>
+        <p class="muted">Sofort einsatzbereite Muster mit Platzhaltern – anpassen, fertig.</p>
+      </div>
+      <div class="card feature">
+        <h3>DACH-spezifisch</h3>
+        <p class="muted">Auf DE/AT/CH zugeschnittene Inhalte, Mehrwert statt Generik.</p>
+      </div>
+      <div class="card feature">
+        <h3>Transparent</h3>
+        <p class="muted">Einzelkauf, kein Abozwang. Kostenlose Muster zum Start.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUKTE -->
   <section id="produkte" class="container" style="margin:26px auto 10px">
     <h2 style="margin:6px 0 14px">Beliebte Vorlagen</h2>
     <div id="grid" class="grid"></div>
   </section>
 
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="container" style="margin:30px auto">
+    <div class="card" style="padding:22px">
+      <h2 style="margin:6px 0 8px">Newsletter & Gratis-Paket</h2>
+      <p class="muted">Erhalte 2 kostenlose Vorlagen (Mahnschreiben + Rechnung DE/AT/CH) und Updates zu neuen Mustern. Du kannst dich jederzeit abmelden.</p>
+      <!-- Platzhalter: Ersetze den folgenden DIV später mit deinem echten E-Mail-Embed (MailerLite Free etc.). -->
+      <div style="background:#f8fafc;border:1px dashed #bed0e6;border-radius:12px;padding:18px">
+        <form id="fakeForm" onsubmit="event.preventDefault(); alert('Demo: Ersetze dieses Formular später durch dein echtes E-Mail-Embed.');">
+          <label for="email" class="muted">E-Mail</label><br/>
+          <input id="email" type="email" placeholder="deine@email.com" required style="width:280px;max-width:100%;margin:8px 12px 8px 0;padding:10px;border:1px solid #cfe0f4;border-radius:10px"/>
+          <button class="btn btn-primary" type="submit">Gratis-Paket senden</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container faq" style="display:grid;gap:12px;margin:10px auto 20px">
+    <h2>FAQ</h2>
+    <details>
+      <summary>Ersetzen die Vorlagen eine Rechtsberatung?</summary>
+      <p>Nein. Unsere Inhalte sind allgemeine Muster zur Orientierung. Für verbindliche Auskünfte bitte eine Rechtsberatung in Anspruch nehmen.</p>
+    </details>
+    <details>
+      <summary>In welchen Formaten erhalte ich die Vorlagen?</summary>
+      <p>In der Regel als DOCX (Word) und PDF, Tabellen als XLSX. Platzhalter sind klar gekennzeichnet.</p>
+    </details>
+    <details>
+      <summary>Darf ich die Vorlagen geschäftlich nutzen?</summary>
+      <p>Ja, für den Eigengebrauch in deinem Unternehmen. Eine Weiterveräußerung ist nicht gestattet.</p>
+    </details>
+  </section>
+
+  <!-- IMPRESSUM / FOOTER -->
   <footer class="container" id="impressum">
     <hr style="border:0;border-top:1px solid #e5edf7;margin:24px 0"/>
+    <p><strong>Impressum & Datenschutz</strong> – Verantwortlich für den Inhalt dieser Website gemäß den geltenden gesetzlichen Bestimmungen (DE: § 5 TMG, AT: § 5 ECG, CH: Art. 3 UWG) ist der Betreiber/die Betreiberin dieser Internetpräsenz. Die vollständigen Kontakt- und Unternehmensangaben werden nach Aufnahme des Geschäftsbetriebs ergänzt. Datenschutzerklärung: Der Schutz Ihrer persönlichen Daten ist uns wichtig. Die Verarbeitung personenbezogener Daten erfolgt – soweit überhaupt – ausschließlich gemäß den anwendbaren Datenschutzgesetzen (insbesondere DSGVO, DSG [CH], DSG [AT]). Eine vollständige Datenschutzerklärung mit allen relevanten Informationen wird vor Aufnahme der aktiven Geschäftstätigkeit auf dieser Seite veröffentlicht.</p>
     <p class="muted">© <span id="year"></span> DACH-VorlagenWerk. Alle Rechte vorbehalten.</p>
   </footer>
 
   <script>
+    // --- Produkt-Daten (7 Payhip-Links + 2 Gratis-Downloads über Platzhalter) ---
     const PRODUCTS = [
-      {title:'Mahnschreiben – Zahlungsverzug', cat:'Recht & Verträge', price:0, link:'DEIN_GRATISLINK_MAHNUNG', k:'mahnung, zahlungsverzug, recht'},
-      {title:'Rechnungsvorlage (DE/AT/CH)', cat:'Finanzen & Buchhaltung', price:0, link:'DEIN_GRATISLINK_RECHNUNG', k:'rechnung, ust, mwst'},
-      {title:'Mietvertrags-Zusatz – Untermiete', cat:'Recht & Verträge', price:9.9, link:'https://payhip.com/b/7HWyz', k:'miete, zusatz, untermiete'},
-      {title:'Kassenbuch Kleinunternehmer (XLSX)', cat:'Finanzen & Buchhaltung', price:6.9, link:'https://payhip.com/b/xDfhb', k:'kassenbuch, excel, buchhaltung'},
-      {title:'Projektplan-Vorlage (XLSX)', cat:'Projekte & Verwaltung', price:5.9, link:'https://payhip.com/b/P9Rnd', k:'projekt, gantt, planung'},
-      {title:'AV-Vertrag (DSGVO)', cat:'Datenschutz & IT', price:12.9, link:'https://payhip.com/b/lZpm8', k:'datenschutz, dsgvo, avv'},
-      {title:'Wartungsvertrag Photovoltaik', cat:'Recht & Verträge', price:14.9, link:'https://payhip.com/b/0nSLI', k:'pv, solar, wartung'},
-      {title:'Übergabeprotokoll Wohnung', cat:'Recht & Verträge', price:4.9, link:'https://payhip.com/b/G9v5t', k:'wohnung, übergabe, protokoll'},
-      {title:'Reisekostenabrechnung (XLSX)', cat:'Finanzen & Buchhaltung', price:7.9, link:'https://payhip.com/b/Jy5tj', k:'reise, spesen, abrechnung'}
+      {title:'Mahnschreiben – Zahlungsverzug', cat:'Recht & Verträge', price:0,   link:'DEIN_GRATISLINK_MAHNUNG',  k:'mahnung, zahlungsverzug, recht'},
+      {title:'Rechnungsvorlage (DE/AT/CH)',   cat:'Finanzen & Buchhaltung', price:0,   link:'DEIN_GRATISLINK_RECHNUNG', k:'rechnung, ust, mwst'},
+
+      {title:'Mietvertrags-Zusatz – Untermiete',             cat:'Recht & Verträge',       price:9.9, link:'https://payhip.com/b/7HWyz', k:'miete, zusatz, untermiete'},
+      {title:'Kassenbuch Kleinunternehmer (XLSX)',           cat:'Finanzen & Buchhaltung', price:6.9, link:'https://payhip.com/b/xDfhb', k:'kassenbuch, excel, buchhaltung'},
+      {title:'Projektplan-Vorlage (XLSX)',                   cat:'Projekte & Verwaltung',  price:5.9, link:'https://payhip.com/b/P9Rnd', k:'projekt, gantt, planung'},
+      {title:'AV-Vertrag (DSGVO)',                           cat:'Datenschutz & IT',       price:12.9,link:'https://payhip.com/b/lZpm8', k:'datenschutz, dsgvo, avv'},
+      {title:'Wartungsvertrag Photovoltaik',                 cat:'Recht & Verträge',       price:14.9,link:'https://payhip.com/b/0nSLI', k:'pv, solar, wartung'},
+      {title:'Übergabeprotokoll Wohnung',                    cat:'Recht & Verträge',       price:4.9, link:'https://payhip.com/b/G9v5t', k:'wohnung, übergabe, protokoll'},
+      {title:'Reisekostenabrechnung (XLSX)',                 cat:'Finanzen & Buchhaltung', price:7.9, link:'https://payhip.com/b/Jy5tj', k:'reise, spesen, abrechnung'}
     ];
 
     const grid = document.getElementById('grid');
@@ -155,10 +247,10 @@
     function render(items){
       grid.innerHTML = '';
       if(!items.length){
-        grid.innerHTML = '<p class="muted">Keine Treffer.</p>';
+        grid.innerHTML = '<p class="muted">Keine Treffer. Suchbegriff anpassen oder Kategorie wechseln.</p>';
         return;
       }
-      items.forEach(p=>{
+      items.forEach((p)=>{
         const el = document.createElement('article');
         el.className = 'card item';
         el.innerHTML = `
@@ -181,13 +273,17 @@
       const c = (cat.value||'').toLowerCase();
       const out = PRODUCTS.filter(p => {
         const hay = (p.title + ' ' + (p.k||'') + ' ' + p.cat).toLowerCase();
-        return (!term || hay.includes(term)) && (!c || p.cat.toLowerCase() === c);
+        const termOk = !term || hay.includes(term);
+        const catOk = !c || p.cat.toLowerCase() === c;
+        return termOk && catOk;
       });
       render(out);
     }
 
     function copyTitle(t){
-      navigator.clipboard.writeText(t);
+      navigator.clipboard.writeText(t).then(()=>{
+        const prev = document.title; document.title = '✔︎ Kopiert'; setTimeout(()=>document.title=prev, 800);
+      });
     }
 
     q.addEventListener('input', filter);
