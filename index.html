@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DACH-VorlagenWerk – Digitale Vorlagen für DE, AT & CH</title>
-  <meta name="description" content="Professionelle, sofort einsetzbare Vorlagen (DOCX, PDF, XLSX) für kleine Unternehmen in Deutschland, Österreich und der Schweiz. Zeitsparend, präzise, anonym – keine Rechtsberatung." />
+  <meta name="description" content="Professionelle, sofort einsatzbereite Vorlagen (DOCX, PDF, XLSX) für kleine Unternehmen in Deutschland, Österreich und der Schweiz. Zeitsparend, präzise, anonym – keine Rechtsberatung." />
   <meta name="robots" content="index,follow" />
 
   <!-- Favicon/Logo -->
@@ -221,17 +221,15 @@ Eine vollständige Datenschutzerklärung mit allen relevanten Informationen wird
   </footer>
 
   <script>
-  // --- Produkt-Daten (Demo) ---
+  // --- Produkt-Daten mit Payhip-Links ---
   const PRODUCTS = [
-    {title:'Mahnschreiben – Zahlungsverzug', cat:'Recht & Verträge', price:0, k:'mahnung, zahlungsverzug, recht'},
-    {title:'Rechnungsvorlage (DE/AT/CH)', cat:'Finanzen & Buchhaltung', price:0, k:'rechnung, ust, mwst'},
-    {title:'Mietvertrags-Zusatz – Untermiete', cat:'Recht & Verträge', price:9.9, k:'miete, zusatz, untermiete'},
-    {title:'Kassenbuch Kleinunternehmer (XLSX)', cat:'Finanzen & Buchhaltung', price:6.9, k:'kassenbuch, excel, buchhaltung'},
-    {title:'Projektplan-Vorlage (XLSX)', cat:'Projekte & Verwaltung', price:5.9, k:'projekt, gantt, planung'},
-    {title:'AV-Vertrag (DSGVO)', cat:'Datenschutz & IT', price:12.9, k:'datenschutz, dsgvo, avv'},
-    {title:'Wartungsvertrag Photovoltaik', cat:'Recht & Verträge', price:14.9, k:'pv, solar, wartung'},
-    {title:'Übergabeprotokoll Wohnung', cat:'Recht & Verträge', price:4.9, k:'wohnung, übergabe, protokoll'},
-    {title:'Reisekostenabrechnung (XLSX)', cat:'Finanzen & Buchhaltung', price:7.9, k:'reise, spesen, abrechnung'}
+    {title:'Mahnschreiben – Zahlungsverzug', cat:'Recht & Verträge', price:0,   k:'mahnung, zahlungsverzug, recht', url:'https://payhip.com/b/0nSLI'},
+    {title:'Rechnungsvorlage (DE/AT/CH)',   cat:'Finanzen & Buchhaltung', price:0,   k:'rechnung, ust, mwst',            url:'https://payhip.com/b/Jy5tj'},
+    {title:'Mietvertrags-Zusatz – Untermiete', cat:'Recht & Verträge',    price:9.9, k:'miete, zusatz, untermiete',      url:'https://payhip.com/b/P9Rnd'},
+    {title:'Kassenbuch Kleinunternehmer (XLSX)', cat:'Finanzen & Buchhaltung', price:6.9, k:'kassenbuch, excel, buchhaltung', url:'https://payhip.com/b/G9v5t'},
+    {title:'Projektplan-Vorlage (XLSX)',    cat:'Projekte & Verwaltung',  price:5.9, k:'projekt, gantt, planung',        url:'https://payhip.com/b/xDfhb'},
+    {title:'Übergabeprotokoll Wohnung',     cat:'Recht & Verträge',       price:4.9, k:'wohnung, übergabe, protokoll',   url:'https://payhip.com/b/7HWyz'},
+    {title:'Reisekostenabrechnung (XLSX)',  cat:'Finanzen & Buchhaltung', price:7.9, k:'reise, spesen, abrechnung',      url:'https://payhip.com/b/lZpm8'}
   ];
 
   const grid = document.getElementById('grid');
@@ -245,7 +243,7 @@ Eine vollständige Datenschutzerklärung mit allen relevanten Informationen wird
       grid.innerHTML = '<p class="muted">Keine Treffer. Suchbegriff anpassen oder Kategorie wechseln.</p>';
       return;
     }
-    items.forEach((p,i)=>{
+    items.forEach((p)=>{
       const el = document.createElement('article');
       el.className = 'card item';
       el.innerHTML = `
@@ -254,7 +252,7 @@ Eine vollständige Datenschutzerklärung mit allen relevanten Informationen wird
         <p class="muted">DOCX/PDF ${p.k ? '• ' + p.k : ''}</p>
         <p class="price">${fmt(p.price)}</p>
         <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
-          <a class="btn btn-primary" href="#" onclick="alert('Demo-Download: Ersetze mit echtem Datei-Link.');return false;">Herunterladen</a>
+          <a class="btn btn-primary" href="${p.url}" target="_blank" rel="noopener">Jetzt kaufen</a>
           <button class="btn btn-ghost" onclick="copyTitle('${p.title.replace(/'/g,"&#39;")}')">Titel kopieren</button>
         </div>`;
       grid.appendChild(el);
