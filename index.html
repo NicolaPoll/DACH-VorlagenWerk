@@ -160,6 +160,70 @@
       .features{grid-template-columns:1fr}
       .hero h1{font-size:36px}
     }
+    /* ===== Mobile Fixes (iOS/Android) ===== */
+:root{ --headerH:64px; }
+
+/* Anker springen nicht unter den Sticky-Header */
+section[id], .hero { scroll-margin-top: var(--headerH); }
+
+/* Header + Navigation kompakter machen */
+@media (max-width: 640px){
+  header{ background: rgba(243,246,251,0.96); }
+  .container{ padding: 0 16px; } /* etwas schmaler auf Mobile */
+
+  .nav{ flex-wrap: wrap; row-gap: 6px; }
+  .brand img{ width:32px; height:32px; }
+  .brand b{ font-size:16px; }
+
+  .nav a{
+    margin-left:12px;
+    font-size:14px;
+  }
+
+  /* Nav darf umbrechen und rechtsbündig stehen */
+  .nav nav{
+    flex:1 1 100%;
+    display:flex;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    gap:12px;
+    padding-left:44px; /* Platz neben dem Logo */
+  }
+
+  /* Hero-Typografie & Abstände runter */
+  .hero .wrap{ padding: 28px 0 40px; grid-template-columns: 1fr; }
+  .hero h1{ font-size: clamp(28px, 7vw, 36px); line-height:1.15; }
+  .hero p{ font-size: 16px; }
+  .pill{ font-size:13px; padding:6px 12px; }
+
+  /* Buttons auf Mobile: volle Breite, schöner Stack */
+  .btn{ padding:12px 16px; }
+  .hero .wrap .btn{ width:100%; justify-content:center; }
+
+  /* Badges umbrechen ordentlich */
+  .kicker{ flex-wrap: wrap; gap:8px; }
+
+  /* Feature-Karten einspaltig mit mehr Luft */
+  .features{ grid-template-columns:1fr; margin:-24px 16px 24px; }
+  .feature{ min-height:unset; }
+
+  /* Produktgrid 1-spaltig */
+  .grid{ grid-template-columns:1fr; }
+
+  /* Suche kompakter, Inputs nicht an Bildschirmrand kleben */
+  .search{ gap:8px; margin:18px 0; }
+  input[type="search"], select{
+    font-size:16px; /* iOS Zoom vermeiden */
+    padding:10px 12px;
+  }
+}
+
+/* ganz klein (z.B. iPhone SE) noch etwas enger */
+@media (max-width: 380px){
+  .nav nav{ padding-left:0; }
+  .nav a{ font-size:13px; margin-left:10px; }
+  .hero h1{ font-size: clamp(26px, 7.5vw, 34px); }
+}  
   </style>
 
   <script type="application/ld+json">
