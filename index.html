@@ -50,7 +50,7 @@
       from { opacity: 0; transform: translateX(30px); }
       to { opacity: 1; transform: translateX(0); }
     }
-    
+
     .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
     .slide-in-left { animation: slideInLeft 0.8s ease-out forwards; }
     .slide-in-right { animation: slideInRight 0.8s ease-out forwards; }
@@ -62,7 +62,7 @@
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--bg)}
     .brand img{width:40px;height:40px;border-radius:9px}
-    .brand b{font-size:20px;font-weight:800} /* Größere Schrift */
+    .brand b{font-size:20px;font-weight:800}
     .nav a{color:#37557a;text-decoration:none;margin-left:18px;font-weight:600;transition:color 0.3s ease}
     .nav a:hover{color:var(--bg)}
 
@@ -74,40 +74,25 @@
 
     .hero{background:linear-gradient(180deg,#0e2238 0%,#17385d 100%);color:var(--text);position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="1" fill="rgba(245,196,0,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(245,196,0,0.05)"/><circle cx="50" cy="10" r="0.5" fill="rgba(245,196,0,0.08)"/></svg>') repeat;animation:float 20s ease-in-out infinite}
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+
     .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center;padding:56px 0;position:relative;z-index:1}
-    .hero h1{font-size:52px;line-height:1.1;margin:0 0 14px;font-weight:900} /* Größere, boldere Schrift */
-    .hero p{font-size:20px;color:#e0e9f6;line-height:1.4} /* Größere Schrift */
-    .pill{display:inline-block;background:rgba(245,196,0,.15);color:#ffe58a;border:1px solid rgba(245,196,0,.35);padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:16px} /* Größer */
+    .hero h1{font-size:52px;line-height:1.1;margin:0 0 14px;font-weight:900}
+    .hero p{font-size:20px;color:#e0e9f6;line-height:1.4}
+    .pill{display:inline-block;background:rgba(245,196,0,.15);color:#ffe58a;border:1px solid rgba(245,196,0,.35);padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:16px}
 
     .card{background:var(--card);border:1px solid #e5edf7;border-radius:var(--radius);box-shadow:var(--shadow);transition:all 0.3s ease}
     .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
 
-    /* FEATURES – korrekte Ausrichtung mit grid */
-    .features{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin:-40px 20px 30px 20px;
-    }
-    .feature{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      text-align:center;
-      padding:18px;
-      min-height:140px;
-    }
-    .feature h3{margin:6px 0 8px;font-size:20px;font-weight:700} /* Größere Schrift */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:-40px 20px 30px 20px;}
+    .feature{display:flex;flex-direction:column;justify-content:center;text-align:center;padding:18px;min-height:140px}
+    .feature h3{margin:6px 0 8px;font-size:20px;font-weight:700}
 
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .item{padding:18px;position:relative}
     .item:hover{transform:translateY(-2px)}
-    .item h4{margin:8px 0 10px;font-size:18px;font-weight:700} /* Größere Schrift */
-    .price{font-weight:800;font-size:18px;color:var(--brand)} /* Größere, farbige Preise */
+    .item h4{margin:8px 0 10px;font-size:18px;font-weight:700}
+    .price{font-weight:800;font-size:18px;color:var(--brand)}
     .muted{color:#6b7280}
     .notice{font-size:13px;color:#5a6778}
     .search{display:flex;gap:10px;margin:24px 0}
@@ -152,12 +137,7 @@
       margin:8px 0;
       font-style:italic;
     }
-    .testimonial .author{
-      margin-top:8px;
-      font-size:12px;
-      font-weight:600;
-      color:#92400e;
-    }
+    .testimonial .author{ margin-top:8px;font-size:12px;font-weight:600;color:#92400e; }
     .social-proof{
       background:rgba(245,196,0,.1);
       border:1px solid rgba(245,196,0,.3);
@@ -263,18 +243,6 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="container" style="margin:20px auto">
-    <div class="testimonial fade-in-up">
-      "Die Vorlagen haben uns Stunden an Arbeit erspart. Besonders das Kassenbuch ist genial!"
-      <div class="author">— Sarah M., Webdesign-Agentur Berlin</div>
-    </div>
-    <div class="testimonial fade-in-up delay-1">
-      "Endlich Vorlagen, die auch für österreichisches Recht passen. Sehr empfehlenswert!"
-      <div class="author">— Thomas K., Einzelunternehmer Wien</div>
-    </div>
-  </section>
-
   <!-- PRODUKTE -->
   <section id="produkte" class="container" style="margin:26px auto 10px">
     <h2 style="margin:6px 0 14px;font-size:32px;font-weight:800">Beliebte Vorlagen</h2>
@@ -289,16 +257,45 @@
         ✓ Über 500+ Unternehmer vertrauen bereits auf unsere Vorlagen
       </div>
       <p class="muted">Erhalte 2 kostenlose Vorlagen (Mahnschreiben + Rechnung DE/AT/CH) und Updates zu neuen Mustern. Du kannst dich jederzeit abmelden.</p>
-      <div style="background:#f8fafc;border:1px solid #bed0e6;border-radius:12px;padding:18px">
-        <form id="newsletterForm" onsubmit="handleNewsletter(event)">
-          <label for="email" class="muted">E-Mail</label><br/>
-          <input id="email" type="email" placeholder="deine@email.com" required style="width:280px;max-width:100%;margin:8px 12px 8px 0;padding:10px;border:1px solid #cfe0f4;border-radius:10px"/>
-          <button class="btn btn-primary" type="submit" id="submitBtn">Gratis-Paket senden</button>
-        </form>
-        <div id="successMessage" style="display:none;margin-top:16px;padding:12px;background:#dcfce7;border:1px solid #bbf7d0;border-radius:8px;color:#166534;">
-          ✅ <strong>Newsletter-Mail versendet!</strong> Prüfe dein Postfach für die Gratis-Downloads.
+
+      <!-- Buttondown Embed (funktioniert ohne eigenes Backend) -->
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/dach-vorlagenwerk"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.com/dach-vorlagenwerk','popupwindow','scrollbars=yes,width=600,height=700');return true;"
+        class="embeddable-buttondown-form"
+      >
+        <label for="bd-email" class="muted">E-Mail</label><br/>
+        <input
+          id="bd-email"
+          name="email"
+          type="email"
+          required
+          placeholder="deine@email.com"
+          aria-label="E-Mail für Newsletter"
+          style="width:280px;max-width:100%;margin:8px 12px 8px 0;padding:10px;border:1px solid #cfe0f4;border-radius:10px"
+        />
+        <input type="hidden" name="embed" value="1" />
+
+        <label style="display:block;margin:8px 0 12px 0;font-size:13px;color:#5a6778">
+          <input type="checkbox" required />
+          Ich stimme zu, E-Mails von DACH-VorlagenWerk zu erhalten (Widerruf jederzeit möglich).
+        </label>
+
+        <input class="btn btn-primary" type="submit" value="Gratis-Paket senden" />
+
+        <!-- Honeypot (Spam-Schutz) -->
+        <div style="position:absolute;left:-5000px" aria-hidden="true">
+          <input type="text" name="b_dach_vorlagenwerk_hp" tabindex="-1" autocomplete="off">
         </div>
-      </div>
+
+        <p class="muted" style="margin-top:10px;font-size:12px">
+          Powered by <a href="https://buttondown.com/refer/dach-vorlagenwerk" target="_blank" rel="noopener">Buttondown</a>
+        </p>
+      </form>
+      <!-- /Buttondown Embed -->
+
     </div>
   </section>
 
@@ -327,7 +324,7 @@
   </footer>
 
   <script>
-    // --- Produkt-Daten mit Download-Zahlen ---
+    // --- Produkt-Daten mit Payhip-Links & Download-Zahlen ---
     const PRODUCTS = [
       {title:'Mahnschreiben – Zahlungsverzug', cat:'Recht & Verträge', price:0,   link:'https://payhip.com/b/plcbA',  k:'mahnung, zahlungsverzug, recht', baseDownloads: 2847},
       {title:'Rechnungsvorlage (DE/AT/CH)',   cat:'Finanzen & Buchhaltung', price:0,   link:'https://payhip.com/b/xLOpv', k:'rechnung, ust, mwst', baseDownloads: 3521},
@@ -341,13 +338,13 @@
       {title:'Reisekostenabrechnung (XLSX)',                 cat:'Finanzen & Buchhaltung', price:7.9, link:'https://payhip.com/b/Jy5tj', k:'reise, spesen, abrechnung', baseDownloads: 876}
     ];
 
-    // Fake Download Counter - erhöht alle 10 Tage um 8-12 Downloads
+    // Fake Download Counter (optisches Trust-Element)
     function getDownloadCount(baseCount) {
       const startDate = new Date('2024-01-01');
       const now = new Date();
       const daysSinceStart = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
       const periods = Math.floor(daysSinceStart / 10);
-      const additionalDownloads = periods * (8 + Math.floor(Math.random() * 5)); // 8-12 range
+      const additionalDownloads = periods * (8 + Math.floor(Math.random() * 5)); // 8–12 je 10 Tage
       return baseCount + additionalDownloads;
     }
 
@@ -355,18 +352,15 @@
     const activities = [
       'Gerade eben: "Kassenbuch Kleinunternehmer" heruntergeladen',
       'Vor 2 Min: "Mahnschreiben" heruntergeladen',
-      'Vor 5 Min: "Rechnungsvorlage" heruntergeladen', 
+      'Vor 5 Min: "Rechnungsvorlage" heruntergeladen',
       'Vor 8 Min: "AV-Vertrag" heruntergeladen',
       'Vor 12 Min: "Projektplan-Vorlage" heruntergeladen'
     ];
-
     function updateRecentActivity() {
       const activityText = document.getElementById('activityText');
       const randomActivity = activities[Math.floor(Math.random() * activities.length)];
       activityText.textContent = randomActivity;
     }
-
-    // Update activity every 15 seconds
     setInterval(updateRecentActivity, 15000);
 
     const grid = document.getElementById('grid');
@@ -423,121 +417,8 @@
     render(PRODUCTS);
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Initialize recent activity
+    // Init activity ticker
     updateRecentActivity();
-
-    // Newsletter handling with email sending
-    function handleNewsletter(event) {
-      event.preventDefault();
-      
-      const email = document.getElementById('email').value;
-      const submitBtn = document.getElementById('submitBtn');
-      const successMessage = document.getElementById('successMessage');
-      
-      // Disable button and show loading
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Wird versendet...';
-      
-      // Simulate sending email (replace with actual email service)
-      setTimeout(() => {
-        // Send newsletter email
-        sendWelcomeEmail(email);
-        
-        // Show success message
-        successMessage.style.display = 'block';
-        document.getElementById('newsletterForm').style.display = 'none';
-        
-        // Reset button (if form would be shown again)
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Gratis-Paket senden';
-        
-        // Scroll to success message
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 1500);
-    }
-
-    function sendWelcomeEmail(recipientEmail) {
-      // Email content with download links
-      const emailSubject = "🎉 Dein DACH-VorlagenWerk Gratis-Paket ist da!";
-      const emailContent = `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <style>
-    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { background: linear-gradient(135deg, #0e2238 0%, #17385d 100%); color: white; padding: 30px 20px; text-align: center; border-radius: 12px; margin-bottom: 30px; }
-    .download-box { background: #f0f9ff; border: 2px solid #0ea5e9; border-radius: 12px; padding: 20px; margin: 20px 0; }
-    .download-btn { display: inline-block; background: #f5c400; color: #231a00; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 700; margin: 8px 8px 8px 0; }
-    .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 14px; color: #6b7280; }
-    .logo { width: 40px; height: 40px; display: inline-block; vertical-align: middle; margin-right: 10px; }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <h1>🎉 Willkommen bei DACH-VorlagenWerk!</h1>
-    <p>Dein Gratis-Paket ist bereit zum Download</p>
-  </div>
-  
-  <h2>Hallo!</h2>
-  
-  <p>Vielen Dank für deine Anmeldung! Hier sind deine beiden kostenlosen Premium-Vorlagen:</p>
-  
-  <div class="download-box">
-    <h3>📄 Mahnschreiben Premium DACH</h3>
-    <p>Professionelle Mahnschreiben-Vorlage für DE, AT & CH mit allen rechtlichen Hinweisen und Platzhaltern.</p>
-    <a href="https://payhip.com/b/plcbA" class="download-btn">Mahnschreiben herunterladen</a>
-  </div>
-  
-  <div class="download-box">
-    <h3>🧾 Rechnungsvorlage Premium DACH</h3>
-    <p>Vollständige Rechnungsvorlagen für Deutschland, Österreich und Schweiz inkl. MwSt./USt.-Varianten.</p>
-    <a href="https://payhip.com/b/xLOpv" class="download-btn">Rechnung herunterladen</a>
-  </div>
-  
-  <h3>Was dich sonst noch erwartet:</h3>
-  <ul>
-    <li>✅ Regelmäßige Updates zu neuen Vorlagen</li>
-    <li>✅ Exklusive Rabatte für Premium-Vorlagen</li>
-    <li>✅ Tipps für Kleinunternehmer im DACH-Raum</li>
-    <li>✅ Keine Spam-Mails, nur wertvollen Content</li>
-  </ul>
-  
-  <p><strong>Wichtiger Hinweis:</strong> Alle Vorlagen sind allgemeine Muster und ersetzen keine Rechtsberatung. Bitte prüfe die Inhalte auf deine spezifischen Anforderungen.</p>
-  
-  <p>Bei Fragen kannst du jederzeit antworten - wir helfen gerne!</p>
-  
-  <p>Viel Erfolg mit deinen neuen Vorlagen!</p>
-  
-  <div class="footer">
-    <p><strong>DACH-VorlagenWerk</strong><br>
-    Digitale Vorlagen für Deutschland, Österreich & Schweiz</p>
-    
-    <p>Du kannst dich jederzeit mit einem Klick vom Newsletter abmelden.</p>
-  </div>
-</body>
-</html>`;
-
-      // In a real implementation, you would send this via your email service
-      // For demo purposes, we'll create a mailto link and log the content
-      console.log('Newsletter Email would be sent to:', recipientEmail);
-      console.log('Subject:', emailSubject);
-      console.log('Content:', emailContent);
-      
-      // Store subscriber (in real app, this would go to your database/email service)
-      const subscriber = {
-        email: recipientEmail,
-        subscribedAt: new Date().toISOString(),
-        gratisPacketSent: true,
-        source: 'website_newsletter_signup'
-      };
-      
-      console.log('Subscriber data:', subscriber);
-      
-      // Optional: Open mailto for testing (uncomment if needed)
-      // const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailContent.replace(/<[^>]*>/g, ''))}`;
-      // window.open(mailtoLink);
-    }
   </script>
 </body>
 </html>
